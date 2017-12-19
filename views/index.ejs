@@ -1,0 +1,106 @@
+<!-- 文章 -->
+<div class="aw-container-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-9 aw-main-content">
+                <div>
+                    <ul class="nav nav-tabs aw-nav-tabs active">
+                        <li class="<%= category == '' ? 'active' : '' %>"><a href="/">全部</a></li>
+                        <li class="<%= category == 'ask' ? 'active' : '' %>"><a href="/?category=ask">问答</a></li>
+                        <li class="<%= category == 'share' ? 'active' : '' %>"><a href="/?category=share">分享</a></li>
+                        <li class="<%= category == 'job' ? 'active' : '' %>"><a href="/?category=job">招聘</a></li>
+                    </ul>
+                    <!-- 文章列表 -->
+                    <div class="aw-explore-list">
+                        <div class="mod-body">
+                            <div class="aw-common-list">
+                                <% include public/index-list %>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="page-control">
+                                <ul class="pagination pull-right">
+                                    <% pageArr.forEach(function(page){ %>
+                                    <li class="<%= page == currentPage ? 'active' : '' %>">
+                                        <a class="indexPage"
+                                           href="?page=<%= page %> <%= category !== '' ? '&category=' + category : '' %>"><%= page %></a>
+                                    </li>
+                                    <% }) %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 侧边栏 -->
+            <div class="col-sm-12 col-md-3 aw-side-bar hidden-xs hidden-sm"`>
+                <div>
+                    <!-- 判断是否登录，登录后显示 -->
+                    <!-- 个人信息 -->
+                    <% if(user) { %>
+                    <div class="aw-mod">
+                        <div class="mod-head">
+                            <h3>个人信息</h3>
+                        </div>
+                        <div class="mod-body">
+                            <dl>
+                                <dt class="pull-left aw-border-radius-5">
+                                    <a href="/user/<%= user.name %>">
+                                        <img src="<%= user.avatar %>" alt="">
+                                    </a>
+                                </dt>
+                                <dd class="pull-left">
+                                    <a class="aw-user-name" href="/user/<%= user.name %>"><%= user.name %></a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="mod-footer">
+                            这家伙很懒,什么都没有留下..
+                        </div>
+                    </div>
+                    <% } else { %>
+                    <div class="aw-mod">
+                        <div class="mod-body" style="padding-top: 10px;">
+                            <p>Fly社区</p>
+                            <p>您可以 <a href="/login">登录 </a>或 <a href="/register">注册</a></p>
+                        </div>
+
+                    </div>
+                    <% } %>
+                    <!-- 无人回复的话题 -->
+                    <% if(notReply > 0){ %>
+                    <div class="aw-mod">
+                        <div class="mod-head">
+                            <h3>无人回复的话题</h3>
+                        </div>
+                        <ul class="not-reply">
+                            <% question.forEach(function(question){ %>
+                            <% if(question.last_reply == null) { %>
+                            <li>
+                                <a href="/question/<%= question._id %>"><%= question.title %></a>
+                            </li>
+                            <% } %>
+                            <% }) %>
+                        </ul>
+                    </div>
+                    <% } %>
+                    <!-- 积分排行榜 -->
+                    <div class="aw-mod aw-text-align-justify">
+                        <div class="mod-head">
+                            <a href="/users" class="pull-right">更多</a>
+                            <h3>积分排行榜</h3>
+                        </div>
+                        <div class="mod-body">
+                            <% include public/user-list %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('.aw-navbar-nav li').eq(0).addClass('active').siblings().removeClass('active');
+    })
+</script>

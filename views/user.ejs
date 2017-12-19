@@ -1,0 +1,189 @@
+<!-- 个人中心 -->
+<div class="aw-container-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="aw-content-wrap ">
+                <!--左边栏-->
+                <div class="col-sm-12 col-md-10 col-md-offset-1 clearfix">
+                    <div class=" aw-main-content">
+                        <div class="aw-mod aw-user-detail-box">
+                            <div class="mod-head">
+                                <img src="<%= user.avatar %>">
+                               <!-- <span class="pull-right">
+                                <a href="#" class="follow btn btn-normal btn-success">
+                                    <span>关注</span>
+                                    <em>|</em>
+                                    <b>0</b>
+                                </a>-->
+                            </span>
+                                <h1><%= user.name %></h1>
+                                <div class="text-color-999"><%= user.motto %></div>
+                            </div>
+                            <div class="mod-body">
+                                <div class="meta">
+                                <span>
+                                    <i class="fa fa-bar-chart-o"></i>
+                                    积分
+                                     <em class="aw-text-color-orange"><%= user.score %></em>
+                                </span>
+
+                                    <span>
+                                    注册时间
+                                    <em class="aw-text-color-orange"><%= user.create_time_ago() %></em>
+                                </span>
+
+                                </div>
+                            </div>
+                            <div class="mod-footer">
+                                <ul class=" aw-nav-tabs">
+                                    <li class="active">
+                                        <a href="#questions" data-toggle="tab">话题</a>
+
+                                    </li>
+                                    <li>
+                                        <a href="#replys" data-toggle="tab">回复</a>
+                                    </li>
+                                    <li>
+                                        <a href="#collect" data-toggle="tab">收藏</a>
+                                    </li>
+                                    <!--<li>
+                                        <a href="#actions" data-toggle="tab">动态</a>
+                                    </li>-->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="aw-user-center-tab">
+                            <div class="tab-content">
+                                <!-- 发问 -->
+                                <div class="tab-pane active" id="questions">
+                                    <div class="aw-mod">
+                                        <div class="mod-head">
+                                            <h3>
+                                                <a href="/user/<%= user.name %>/questions" class="pull-right aw-more-content">
+                                                    全部
+                                                </a>
+                                            </h3>
+                                        </div>
+                                        <div class="mod-body">
+                                            <div class="aw-profile-publish-list">
+                                                <% question.forEach(function(question){ %>
+                                                <div class="aw-item">
+                                                    <div class="mod-head">
+                                                        <h4><a href="/question/<%= question._id %>"><%= question.title %></a></h4>
+                                                    </div>
+                                                    <div class="mod-body">
+                                                    <span class="aw-border-radius-5 count pull-left">
+                                                        <i class="fa fa-comment-o"></i>
+                                                        <%= question.comment_num %>
+                                                    </span>
+                                                        <p class="aw-hide-txt">
+                                                            <%= question.click_num %> 次浏览  • 0 个关注   • <%= question.create_time_ago() %>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <% }) %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 回复 -->
+                                <div class="tab-pane" id="replys">
+                                    <div class="aw-mod">
+                                        <div class="mod-head">
+                                            <h3>
+                                                <a href="/user/<%= user.name %>/replys" class="pull-right aw-more-content">
+                                                    全部
+                                                </a>
+                                            </h3>
+                                        </div>
+                                        <div class="mod-body">
+                                            <div class="aw-profile-publish-list">
+                                                <% replies.forEach(function(reply){%>
+                                                <div class="aw-item">
+                                                    <div class="mod-head">
+                                                        <h4>
+                                                            在
+                                                            <a href="/question/<%= reply.question_id._id %>#<%= reply._id %>">
+                                                                <%= reply.question_id.title %>
+                                                            </a>
+                                                            回复了
+                                                        </h4>
+                                                    </div>
+                                                    <div class="mod-body">
+                                                    <span class="aw-border-radius-5 count pull-left">
+                                                        <i class="fa fa-thumbs-o-up"></i> 0
+                                                    </span>
+                                                        <div class="aw-hide-txt">
+                                                            <%- markdown(reply.content) %>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <%})%>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 收藏 -->
+                                <div class="tab-pane" id="collect">
+                                    <div class="aw-mod">
+                                        <% questions.forEach(function(collects){ %>
+                                        <% if(collects.collect.indexOf(user._id) != -1){ %>
+                                        <div style="margin-top: 14px;">
+                                            <a href="/question/<%= collects._id %>"><%= collects.title %></a>
+                                        </div>
+                                        <% } %>
+                                        <% }) %>
+                                    </div>
+                                </div>
+                                <!-- 动态 -->
+                                <!--<div class="tab-pane" id="actions">
+                                    <div class="aw-mod"></div>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--右边栏-->
+                <!--<div class="col-sm-12 col-md-3 aw-side-bar">
+                    <div class="aw-mod people-following">
+                        <a href="#" class="pull-right font-size-12">更多</a>
+                        <span>
+                            关注
+                            <em class="aw-text-color-orange">2</em>人
+                        </span>
+                        <p>
+                            <a href="#" class="aw-user-name">
+                                <img src="/images/avatar-mid-img.png" alt="">
+                            </a>
+                            <a href="#" class="aw-user-name">
+                                <img src="/images/avatar-mid-img.png" alt="">
+                            </a>
+                        </p>
+                    </div>
+                    <div class="aw-mod people-following">
+                        <div class="mod-body">
+                            <a href="#" class="pull-right font-size-12">
+                                更多
+                            </a>
+                            <span>
+                            被
+                            <em class="aw-text-color-orange">2</em>人关注
+                        </span>
+                            <p>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(() => {
+         $('.aw-nav-tabs>li>a').click(function(){
+             $(this).eq($(this).index()).addClass('active').siblings().removeClass('active')
+        })
+    })
+</script>

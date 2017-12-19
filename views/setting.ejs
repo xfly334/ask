@@ -1,0 +1,73 @@
+<!-- 个人设置 -->
+<div class="aw-container-wrap" ng-app="settingApp" ng-controller="settingController">
+    <div class="container">
+        <div class="row">
+            <div class="aw-content-wrap clearfix">
+                <dov class="aw-user-setting">
+                    <div>
+                        <h2>
+                            <i class="fa fa-cog">
+                                用户设置
+                            </i>
+                        </h2>
+                    </div>
+                    <div class="tab-content clearfix">
+                        <div class="aw-mod">
+                            <div class="mod-body">
+                                <!-- 基本信息 -->
+                                <form id="<%= user._id %>" name="settingForm" ng-submit="postForm()">
+                                    <div class="aw-mod mod-base">
+                                        <div class="mod-head"><h3>基本信息</h3></div>
+                                        <div class="mod-body">
+                                            <dl>
+                                                <dt>账号：</dt>
+                                                <dd><%= user.name %></dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>邮箱：</dt>
+                                                <dd><%= user.email %></dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>
+                                                    个性签名：
+                                                </dt>
+                                                <dd class="introduce">
+                                                    <input name="motto" value="<%= user.motto %>" ng-model="formData.motto" required ng-maxlength="20">
+                                                   <div style="height: 20px;margin-left: 85px;">
+                                                       <label ng-show="settingForm.motto.$invalid && !settingForm.motto.$pristine" ng-cloak class="control-label text-danger">
+                                                           <i class="fa fa-close"></i>
+                                                           请填写正确的介绍
+                                                       </label>
+                                                   </div>
+                                                </dd>
+                                            </dl>
+                                            <div class="side-bar">
+                                                <dl>
+                                                    <dt class="pull-left">
+                                                        <input id="avatar" name="avatar" type="file" target="<%= user.avatar %>">
+                                                    </dt>
+                                                    <dd class="aw-upload pull-right">
+                                                        <h5>头像设置</h5>
+                                                        <div>支持jpg、gif、png等格式的图片(其他的图片格式不支持)</div>
+
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="mod-footer clearfix">
+                                            <input type="submit" class="btn btn-large btn-success text-center">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </dov>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="/plugins/fileinput/css/fileinput.min.css">
+<script src="/plugins/fileinput/js/fileinput.min.js"></script>
+<script src="/plugins/fileinput/js/locales/zh.js"></script>
+

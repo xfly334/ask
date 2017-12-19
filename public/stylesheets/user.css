@@ -1,0 +1,152 @@
+.aw-container-wrap {
+    margin-top: 30px;
+}
+
+.aw-content-wrap {
+    margin: 0 15px;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+}
+.aw-content-wrap > div{
+    background-color: #fff;
+    padding: 0;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.65);
+    border-radius: 4px;
+}
+.aw-main-content {
+    padding: 0 0 20px;
+    border-right: 1px solid #e6e6e6;
+}
+
+.aw-user-detail-box .mod-head {
+    position: relative;
+    min-height: 140px;
+    padding: 20px 20px 20px 135px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.aw-user-detail-box .mod-head img {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.aw-user-detail-box .mod-body .meta {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 20px;
+    font-size: 13px;
+}
+
+.aw-user-detail-box .mod-body .meta span {
+    margin-right: 10px;
+}
+
+.aw-text-color-orange {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.aw-user-detail-box .mod-footer {
+    border-top: 1px solid #E3E3E3;
+}
+
+.aw-user-detail-box .mod-footer .aw-nav-tabs {
+    padding: 20px 20px 0;
+    min-height: 52px;
+}
+.aw-nav-tabs {
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+}
+.aw-nav-tabs li {
+    float: left;
+    margin: 0 5px;
+}
+.aw-nav-tabs li a{
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    padding: 0 15px;
+    line-height: 30px;
+    color: #666;
+    text-decoration: none;
+}
+.aw-nav-tabs > li.active, .aw-nav-tabs li:hover {
+    border-bottom: 2px solid #155faa;
+}
+.aw-nav-tabs > li.active > a, .aw-nav-tabs li a:hover {
+    color: #333;
+}
+.aw-nav-tabs > li.active > a{
+    font-weight: 700;
+}
+.badge {
+    padding: 2px 6px;
+    margin-left: 5px;
+    background: #ccc;
+}
+/*发问*/
+.tab-content {
+    padding-bottom: 20px;
+}
+.aw-user-center-tab  .aw-mod {
+    padding: 0 20px;
+}
+.aw-user-center-tab .aw-mod .aw-item {
+    padding-top: 14px;
+    border-bottom: 1px solid #f5f5f5;
+}
+.aw-user-center-tab .aw-mod > .mod-head h3 {
+    margin: 20px 0;
+    font-size: 20px;
+    line-height: 20px;
+}
+.aw-user-center-tab  .aw-mod > .mod-head h3 a {
+    font-size: 12px;
+}
+.aw-user-center-tab .aw-mod > .mod-head h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.aw-user-center-tab .count {
+    width: 58px;
+    height: 30px;
+    margin: 0 10px 0 0;
+    padding: 0 10px;
+    background-color: #fff;
+    border: 1px solid #f5f5f5;
+    border-radius: 4px;
+    line-height: 30px;
+}
+.aw-profile-publish-list p {
+    margin-bottom: 14px;
+    line-height: 30px;
+}
+/*****右边栏*******/
+.aw-side-bar {
+    margin-left: -1px;
+    padding: 20px;
+    border-left: 1px solid #e6e6e6;
+}
+.aw-side-bar .aw-mod:first-child {
+    padding-top: 0;
+    border-top: none;
+}
+.aw-side-bar .aw-mod {
+    padding: 20px 0;
+    border-top: 1px solid #E2E2E2;
+}
+.font-size-12 {
+    font-size: 12px;
+}
+.aw-mod.people-following p {
+    margin-top: 10px;
+}
+.aw-mod.people-following em {
+    font-weight:400;
+}
+.aw-mod.people-following .aw-user-name img {
+    width: 24px;
+    height: 24px;
+}

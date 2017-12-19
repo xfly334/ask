@@ -1,0 +1,57 @@
+<!-- 编辑 -->
+<div class="container aw-create" ng-app="editApp" ng-controller="editController">
+    <div class="row">
+        <div class="aw-create-content clearfix">
+            <div class="col-sm-12 col-md-9 aw-main-content">
+                <div class="nav nav-tabs aw-nav-tabs active">
+                    <h2 class="hidden-xs">
+                        <i class="fa fa-credit-card"></i>
+                    </h2>
+                </div>
+                <!-- 问题的主体 -->
+                <form name="editForm" target="/question/<%= question._id %>/edit" method="post" ng-submit="updateForm($event)">
+                    <div class="aw-mod aw-mod-publish">
+                        <div class="mod-body">
+                            <h3>问题的分类</h3>
+                            <div class="aw-publish-title">
+                                <select ng-model="formData.category" name="category" class="form-control" required>
+                                    <% categorys.forEach(function (categorys, index) { %>
+                                    <option value="<%= categorys[0] %>"  <%= question.category == categorys[0] ? 'selected': '' %>><%= categorys[1] %></option>
+                                    <% }) %>
+                                </select>
+                            </div>
+                            <h3>问题的标题</h3>
+                            <div class="aw-publish-title">
+                                <input type="text" name="title" ng-model="formData.title" value="<%= question.title %>" ng-maxlength="20" class="form-control" required>
+                                <div style="height: 20px;">
+                                    <span ng-cloak ng-show="editForm.title.$invalid && !editForm.title.$pristine" class="text-danger"><i class="fa fa-close"></i>标题的长度不能超过20个字符</span>
+                                </div>
+                            </div>
+                            <h3>问题补充：</h3>
+                            <div class="aw-mod aw-editor-box">
+                                <div class="mod-head">
+                                    <textarea id="create" placeholder="问题支持markdown格式,请注意标记代码" id="question" required><%= question.content %></textarea>
+                                </div>
+                                <div class="mod-body">
+                                    <div style="height:20px">
+                                        <span ng-show="!isEmpty" class="text-danger">
+                                            <i class="fa fa-exclamation-triangle"></i>
+                                            内容不能为空
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mod-footer clearfix">
+                            <input ng-disabled="editForm.$invalid || !isEmpty" type="submit" class="btn btn-large btn-success pull-right" value="发布问题">
+                            <div ng-cloak ng-show="error" class="alert alert-danger text-center" id="errorbox" style="margin-top: 50px">
+                                {{ error }}
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

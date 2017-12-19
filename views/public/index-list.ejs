@@ -1,0 +1,31 @@
+<% if(question.length > 0){ %>
+<% question.forEach(function(question){ %>
+<div class="aw-item">
+    <a class="aw-user-name" href="/user/<%= question.author.name %>">
+        <img src="<%= question.author.avatar %>" alt="">
+    </a>
+    <div class="aw-question-content">
+        <h4>
+            <a href="/question/<%= question._id %>"><%= question.title %></a>
+            <span style="background-color:#99cfff;color:white"><%= question.categoryName %></span>
+        </h4>
+        <div class="pull-right hidden-xs contribute">
+            <% if(question.last_reply) { %>
+            <a class="" href="/question/<%=question._id %>#<%= question.last_reply._id %>">
+                <img src="<%= question.last_reply_author.avatar %>">
+            </a>
+            <span class="pull-right text-color-999"><%= question.last_reply_time_ago() %></span>
+            <% } else { %>
+            <span class="pull-right text-color-999"><%= question.create_time_ago() %></span>
+            <% } %>
+        </div>
+        <p>
+            <a class="aw-user-name" href="/user/<%= question.author.name %>"><%= question.author.name %></a>
+            <span class="text-color-999">
+                发起了问题  • <%= question.comment_num %> 个回复 • <%= question.click_num %> 次浏览
+            </span>
+        </p>
+    </div>
+</div>
+<% }) %>
+<% } %>

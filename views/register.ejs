@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="aw-register-box col-lg-6  col-md-offset-3" ng-app="registerApp" ng-controller="registerController">
+       <!-- <div class="mod-head">
+            <h1>注册新用户</h1>
+        </div>-->
+        <div class="mod-body">
+            <form name="regForm" ng-submit="postForm()">
+                <ul>
+                    <li>
+                        <input class="col-lg-10 col-md-10 col-sm-10 col-xs-10" name="name" type="text" placeholder="用户名" ng-model="formData.name" ng-minlength="5" ng-maxlength="12" ng-pattern="/^[a-zA-Z][\w]{4,11}$/" required>
+                        <span class="alert alert-danger" ng-cloak ng-show="regForm.name.$invalid && !regForm.name.$pristine">用户名长度不符合</span>
+                    </li>
+                    <li>
+                        <input class="col-lg-10 col-md-10 col-sm-10 col-xs-10" name="email" type="email" placeholder="邮箱" ng-model="formData.email"
+                               ng-pattern="/^(\w+)(\.\w+)*@(\w+)((\.\w+)+)$/" required>
+                        <span class="alert alert-danger" ng-cloak ng-show="regForm.email.$invalid && !regForm.email.$pristine">邮箱格式不正确</span>
+                    </li>
+                    <li>
+                        <input class="col-lg-10 col-md-10 col-sm-10 col-xs-10" name="password" type="password" placeholder="密码" ng-model="formData.password" ng-pattern="/(?!^\\d+$)(?!^[a-zA-Z]+$)(?!^[_#@]+$).{5,}/" ng-maxlength="12" required>
+                        <span class="alert alert-danger" ng-cloak ng-show="regForm.password.$invalid && !regForm.password.$pristine">密码格式不正确</span>
+                    </li>
+                    <li class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <input type="checkbox" checked="checked" value="agree" required>我同意
+                        <a href="#">用户协议</a>
+                        <a class="pull-right" href="/login">已有账号</a>
+                    </li>
+                    <li class="col-lg-10 col-md-10 col-sm-10 col-xs-10"><input type="submit" ng-disabled="regForm.$invalid" class="btn btn-large btn-blue btn-block"
+                               value="注册"></li>
+                </ul>
+            </form>
+        </div>
+        <div class="mod-footer" style="height: 40px;">
+            <div ng-cloak ng-show="success" id="successbox" class="alert alert-success" role="alert">
+                {{ success }}
+            </div>
+            <div ng-cloak ng-show="error" id="errorbox" class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+.aw-create {
+    margin-top:30px;
+}
+.aw-create-content {
+    margin: 0 15px;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.65);
+}
+.aw-main-content {
+    padding: 0 0 20px;
+    border-right: 1px solid #e6e6e6;
+}
+.aw-nav-tabs {
+    min-height: 63px;
+    margin: 0;
+    padding: 30px 20px 0;
+    border-color: #e6e6e6;
+}
+.aw-nav-tabs h2 {
+    margin: 0;
+    font-size: 20px
+}
+.aw-mod-publish {
+    padding: 0 20px 20px;
+}
+.aw-mod-publish h3:first-child {
+    margin-top: 30px;
+}
+.aw-publish-title {
+    margin-bottom: 10px;
+}
+.form-control {
+    width:50%;
+    margin-bottom: 10px;
+    padding: 6px;
+    resize: none;
+    box-shadow: none;
+    border-color: #ccc;
+}
+.text-danger {
+    color: #a94442;
+}
+.aw-publish-title input {
+    width: 78%;
+    margin-bottom: 10px;
+}
+
+textarea {
+    overflow: auto;
+}
+.aw-editor-box .mod-head {
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+}
+.CodeMirror, .CodeMirror-scroll {
+    height: 200px !important;
+}
+.CodeMirror .cm-spell-error {
+    background:rgba(255,0,0,.0) !important;
+}
+.aw-editor-box .mod-body {
+    position: relative;
+    margin-top: 15px;
+    line-height: 28px;
+}
+.btn-large {
+    width: 120px;
+    height: 38px;
+}
+.btn-success[disabled]:hover {
+    opacity: 0.8;
+}

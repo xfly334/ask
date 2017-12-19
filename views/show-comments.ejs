@@ -1,0 +1,67 @@
+<% comments.forEach(function(comment){ %>
+<div class="aw-item" target="<%= comment._id %>">
+    <div class="mod-head">
+        <a class="anchor"></a>
+        <a class="aw-user-img aw-border-radius-5 pull-right" href="/user/<%= comment.author.name %>">
+            <img src="<%= comment.author.avatar %>">
+        </a>
+        <div class="title">
+            <p>
+                <% if(comment.comment_target_id){ %>
+                <a name="<%= comment.author.name %>" class="aw-user-name" href="/user/<%= comment.author.name %>"><%= comment.author.name %></a>
+                回复
+                <a class="aw-user-name"
+                   href="/user/<%= comment.comment_target_id.name %>"><%= comment.comment_target_id.name %></a>
+                <% } else { %>
+                <a name="<%= comment.author.name %>" class="aw-user-name" href="/user/<%= comment.author.name %>"><%= comment.author.name %></a>
+                <% } %>
+            </p>
+        </div>
+    </div>
+    <div class="mod-body clearfix">
+        <div class="markitup-box">
+            <%- markdown(comment.content) %>
+        </div>
+    </div>
+    <div class="mod-footer">
+        <div class="meta clearfix">
+            <span class="operate">
+                <a class="comments-agree" href="javascript:;">
+                    <i class="fa fa-thumbs-o-up"></i>
+                    <b class="count"><%= comment.likes.length %></b>
+                </a>
+            </span>
+            <span class="operate">
+                <a class="comments-disagree" href="javascript:;">
+                    <i class="fa fa-thumbs-o-down"></i>
+                    <b class="count"><%= comment.dislikes.length %></b>
+                </a>
+            </span>
+            <span class="operate">
+                <a class="aw-show-comment" href="javascript:;">
+                    回复
+                </a>
+            </span>
+            <span class="text-color-999 pull-right">
+                <%= comment.create_time_ago() %>
+            </span>
+        </div>
+        <form class="hide" action="/<%= comment.question_id._id %>/comment" style="background:none;padding:10px 0px">
+            <input type="hidden" name="reply_id" value="<%= comment.reply_id %>">
+            <input type="hidden" name="comment_target_id" value="<%= comment.author._id %>">
+            <div class="aw-comment-box-main">
+                <div class="comment_markdown" style="padding: 10px;" contenteditable></div>
+                <div class="aw-comment-box-btn clearfix" style="display: block;">
+                    <span class="pull-right">
+                        <input type="submit" value="评论" class="commentBtn commentBtn-two btn btn-default btn-success"
+                               disabled>
+                        <a class="btn btn-primary close-comment-box">
+                            取消
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<% }) %>

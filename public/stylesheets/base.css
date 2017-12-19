@@ -1,0 +1,212 @@
+/***************通用样式***************/
+@charset "UTF-8";
+body {
+    background: #e1e1e1;
+    font-size: 14px;
+    line-height: 160%;
+    color: #666;
+    font-family: 微软雅黑;
+    overflow-x: hidden;
+}
+ul,li,ol,dl {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    font-size: 100%;
+    line-height: 1.7;
+}
+.aw-common-list .aw-question-replay-count em, .markItUpPreviewFrame .title, h1, h2, h3 {
+    color: #333;
+}
+a {
+    text-decoration: none;
+    color: #155faa;
+}
+a:hover {
+    text-decoration: none;
+}
+
+.btn-mini {
+    min-width: 64px;
+    height: 24px;
+    padding: 0 10px;
+    line-height: 24px;
+    font-weight: 400;
+    font-size: 12px;
+    border: none;
+}
+img {
+    border-radius: 4px;
+}
+em {
+    font-style: normal;
+}
+.btn.follow.btn-success {
+    border:none;
+}
+.btn.follow.btn-success em {
+    color: #78c779;
+    font-size: 12px;
+    margin: 0 3px;
+}
+.text-color-999 {
+    font-size: 12px;
+    color: #999;
+}
+.follow b {
+    font-size: 12px;
+    font-weight: 400;
+}
+/******************导航样式*********************/
+/*************导航******************/
+.navbar {
+    background-color: #444;
+    border: 0;
+    width: 100%;
+    border-radius: 0;
+}
+i {
+    margin-right: 5px;
+}
+
+.logo {
+    background: url("../images/logo.png") no-repeat;
+    background-size: 100% 100%;
+    width: 90px;
+    height: 38px;
+    margin: 5px 0 0 0;
+}
+
+/* 搜索栏 */
+.navbar-search {
+    margin: 10px 0 0 0;
+    float: left;
+}
+.navbar-search .search-query {
+    background: url(../images/search.png) 4px 4px no-repeat #888;
+    padding: 3px 5px 3px 25px;
+    width:206px;
+    color: #666;
+    border: 0;
+    outline:none;
+    border-radius: 14px;
+    transition: all .5s;
+}
+.navbar-search .search-query:hover {
+    background-color: #fff;
+}
+.navbar-search .search-query:focus {
+    background-color: #fff;
+}
+.aw-nav li {
+    /*float: right;*/
+    text-align: center;
+}
+.aw-nav li a {
+    color: #ccc !important;
+    padding:15px 20px;
+}
+.aw-nav li a:hover {
+    color: #fff !important;
+}
+.aw-navbar-nav li {
+    width: 82px;
+    text-align: center;
+    position: relative;
+}
+
+.badge-important {
+    background: #f33;
+    position: absolute;
+    top: 4px;
+    right: 0px;
+}
+
+.aw-navbar-nav li a {
+    color: #ccc !important;
+    padding: 16px;
+}
+
+.aw-navbar-nav li.active a {
+    background-color: transparent !important;
+    color: #fff !important;
+}
+
+.aw-navbar-nav > li > a:hover {
+    background-color: transparent !important;
+    color: #fff !important;
+}
+/*发起按钮*/
+.aw-publish-btn a{
+    width: 80px;
+    line-height: 32px;
+    margin-top: 10px;
+}
+.aw-publish-btn a {
+    display: inline-block;
+    width: 80px;
+    border-radius: 4px;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    color: #ccc;
+}
+
+.aw-publish-btn a:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+/**********************底部样式********************/
+footer {
+    color: #777;
+    padding: 30px 0;
+    border-top: 1px solid #e5e5e5;
+    margin-top: 70px;
+}
+footer a {
+    color: #777;
+}
+footer a:hover {
+    color: #777;
+}
+.footer-bottom {
+    font-size: 13px;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #e7e7e7;
+}
+/***********************/
+.comment_markdown {
+    min-height: 30px;
+    /*设置最小高度*/
+    max-height: 1000px;
+    /*设置最大高度超过300px时出现滚动条*/
+    _height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    outline: 0;
+    border: 1px solid #e7eaf1;
+    border-radius: 4px;
+    font-size: 14px;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background:rgb(247,248,250);
+    transition: all 1s;
+}
+.comment_markdown:focus {
+    border-color:#bbb;
+    background:#fff;
+}
+.comment_markdown:empty::before{
+    color:lightgrey !important;
+    content:attr(placeholder) !important;
+}
+
+.public {
+    width:90% !important;
+}

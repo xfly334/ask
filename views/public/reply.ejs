@@ -1,0 +1,9 @@
+<div class="aw-item">
+    <p>
+        <em class="pull-left">
+            <a href="/user/<%=message.author_id.name %>" class="aw-user-name"><%= message.author_id.name %></a>
+            评论了
+        </em>
+        <a href="/question/<%= message.question_id._id %>#<%= message.reply_id._id %>" class="aw-hide-txt"><%= message.question_id.title %></a>
+    </p>
+</div>

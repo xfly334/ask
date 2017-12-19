@@ -1,0 +1,135 @@
+/*************导航******************/
+.navbar {
+    background-color: #563d7c;
+    border: 0;
+    width: 100%;
+}
+
+i {
+    margin-right: 5px;
+}
+
+.navbar-header {
+    float: left;
+}
+
+.navbar-toggle {
+    float: left;
+}
+
+.navbar-default .navbar-toggle {
+    border: none;
+}
+
+.navbar-default .navbar-toggle:hover {
+    background: none;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.logo {
+    background: url("../images/logo.png") no-repeat;
+    background-size: contain;
+    width: 90px;
+    height: 38px;
+    margin: 7px 0 0 0;
+}
+
+.navbar-nav li {
+    width: 82px;
+    text-align: center;
+    position: relative;
+}
+
+.badge-important {
+    background: #f33;
+    position: absolute;
+    top: 4px;
+    right: 2px;
+}
+
+.aw-navbar-nav li a {
+    color: #fff !important;
+    padding: 16px;
+}
+
+.aw-navbar-nav li.active a {
+    background-color: #6e4e9e !important;
+}
+
+.aw-navbar-nav > li > a:hover {
+    background-color: #6e4e9e !important;
+}
+
+.navbar-right > a img {
+    width: 32px;
+    height: 32px;
+}
+
+.navbar-right li {
+    float: right;
+    width: 76px;
+    height: 32px;
+    margin: 9px 5px 0;
+}
+
+.navbar-right li a {
+    padding: 0;
+}
+/*发起按钮*/
+.aw-publish-btn a{
+    width: 80px;
+    line-height: 32px;
+    margin-top: 10px;
+}
+.aw-publish-btn a {
+    display: inline-block;
+    width: 80px;
+    border-radius: 4px;
+    text-align: center;
+    border: none;
+    background-color: #59b0ff;
+}
+
+.aw-publish-btn a:hover {
+    background-color: #4daaff;
+}
+
+/*个人设置按钮*/
+.dropdown {
+    margin-top: 10px;
+    line-height: 32px;
+}
+
+.dropdown-menu {
+    min-width: 118px;
+    margin-top: -0.5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 0;
+}
+
+.dropdown-menu > li {
+    height: 42px;
+}
+
+.dropdown-menu > li:first-child {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-menu > li > a {
+    line-height: 42px;
+    padding: 0px 10px;
+}
+
+#dropdownMenu1 {
+    display: inline-block;
+    width: 32px;
+    height: 41px;
+    cursor: pointer;
+    margin-left: 10px;
+
+}
+

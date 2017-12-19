@@ -1,0 +1,19 @@
+/***************底部****************/
+footer {
+    color: #777;
+    padding: 30px 0;
+    border-top: 1px solid #e5e5e5;
+    margin-top: 70px;
+}
+footer a {
+    color: #777;
+}
+footer a:hover {
+    color: #777;
+}
+.footer-bottom {
+    font-size: 13px;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #e7e7e7;
+}

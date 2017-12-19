@@ -1,0 +1,62 @@
+<% if(replies.length > 0) { %>
+<div class="aw-mod aw-question-comment">
+    <div class="mod-head">
+        <ul class="nav nav-tabs aw-nav-tabs active">
+            <h2 class="hidden-xs"><%= question.comment_num %>个回复</h2>
+        </ul>
+    </div>
+    <div class="mod-body aw-feed-list">
+        <% replies.forEach(function (reply, index) { %>
+        <div class="aw-item" id="<%= reply._id %>" off="true">
+            <!-- 回复头部 -->
+            <div class="mod-head">
+                <a href="/user/<%= reply.author.name %>" class="aw-user-img aw-border-radius-5">
+                    <img src="<%= reply.author.avatar %>" alt="">
+                </a>
+                <div class="title">
+                    <p>
+                        <a href="/user/<%= reply.author.name %>" class="aw-user-name"><%= reply.author.name %></a>
+                    </p>
+                </div>
+            </div>
+            <!-- 回复的内容 -->
+            <div class="mod-body clearfix">
+                <div class="markitup-box">
+                    <%- markdown(reply.content) %>
+                </div>
+            </div>
+
+            <!-- 回复的底部 -->
+            <div class="mod-footer">
+                <!-- 回复的操作按钮 -->
+                <div class=" clearfix">
+                    <span class="text-color-999 pull-right"><%= reply.create_time_ago() %></span>
+                    <span class="operate">
+                        <a href="javascript:;" class="reply-agree">
+                            <i class="fa fa-thumbs-o-up"></i>
+                            <b class="count"><%= reply.likes.length %></b>
+                        </a>
+                    </span>
+                    <span class="operate">
+                        <a href="javascript:;" class="reply-disagree">
+                            <i class="fa fa-thumbs-o-down"></i>
+                            <b class="count"><%= reply.dislikes.length %></b>
+                        </a>
+                    </span>
+                    <span class="operate">
+                        <a href="javascript:;" class="aw-add-comment" content="<%= reply.comment_num %>条评论">
+                            <i class="fa fa-commenting-o"></i>
+                            <%= reply.comment_num %>条评论
+                        </a>
+                    </span>
+                </div>
+                <!-- 二级回复的显示位置 -->
+                <% include comment-list %>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
+<% } %>
+
+

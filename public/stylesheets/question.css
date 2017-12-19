@@ -1,0 +1,313 @@
+
+/**********主体左侧内容***********************/
+.aw-container-wrap {
+    margin-top: 30px;
+}
+.aw-container-wrap .container .row {
+}
+.aw-main-content {
+    padding: 0;
+    min-height: 210px;
+}
+.aw-main-content > div{
+    margin-right: 5px;
+    background-color: #fff;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.65);
+    border-radius: 4px;
+    padding-bottom: 20px;
+}
+.aw-topic-bar {
+    padding: 20px 0 0;
+    margin: 0px 20px 0;
+}
+.aw-topic-bar .topic-tag {
+    float: left;
+    margin: 0 10px 10px 0;
+    background-color: #99cfff;
+    padding: 0px 7px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 4px;
+
+}
+
+.aw-question-detail {
+    margin-bottom: 30px;
+    padding: 10px 20px 0;
+}
+.aw-question-detail .mod-head {
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 14px;
+}
+.mod-head h1 {
+    font-size: 20px;
+}
+
+
+.aw-question-detail .content {
+    padding: 10px 0;
+}
+.markitup-box .markdown-text p {
+    padding: 5px;
+    margin: 0 0 10px;
+}
+.meta {
+    font-size: 12px;
+}
+.meta > a {
+    padding: 0 5px;
+}
+a:hover {
+    text-decoration: none;
+    color: #499ef3;
+}
+/*****************回复**********************/
+.aw-nav-tabs {
+    margin: 0;
+    padding: 30px 20px 0;
+    border-color: #e6e6e6;
+}
+.aw-nav-tabs h2 {
+    font-size: 20px;
+}
+.aw-feed-list {
+    padding: 0 20px;
+}
+.aw-feed-list .aw-item {
+    padding: 14px 0;
+    border-bottom: 1px solid #F5F5F5;
+}
+.aw-item > .mod-head {
+    padding-left: 50px;
+    position: relative;
+}
+.title p {
+    margin: 0;
+}
+.aw-user-name {
+    color: #666;
+}
+.aw-user-name {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+}
+.aw-feed-list .aw-item .mod-head, .aw-feed-list .aw-item .mod-body, .aw-feed-list .aw-item .mod-footer {
+    width: 100%;
+    padding-left: 50px;
+}
+
+.aw-feed-list .aw-item .aw-user-img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left:0;
+}
+.aw-feed-list .aw-item .aw-user-img img {
+    width: 40px;
+    height: 40px;
+}
+pre.prettyprint {
+    padding: 12px;
+    border: 1px solid #e7e7e7;
+}
+.markitup-box code {
+    background-color: #EDEAD5;
+    display: block;
+    margin: 5px 0;
+    padding: 5px;
+    white-space: normal;
+    text-align: left;
+}
+.aw-item .mod-footer {
+    padding-left: 50px;
+}
+.aw-item .mod-footer i {
+    margin: 0;
+}
+.aw-feed-list .operate {
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 5px;
+}
+.aw-feed-list .operate a:hover, .aw-feed-list .operate a.active {
+    background-color: #499ef3;
+    color: #fff;
+}
+.aw-feed-list .operate a {
+    float: left;
+    height: 28px;
+    padding: 0 10px;
+    color: #999;
+    line-height: 28px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+/********二级回复***************/
+.aw-comment-box {
+    position: relative;
+    margin: 10px auto;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+}
+.aw-comment-box .aw-comment-list {
+    padding: 15px;
+}
+.aw-feed-list .aw-item .comment-item {
+    position: relative;
+    padding: 14px 0;
+    border-bottom: 1px solid #F5F5F5;
+}
+/*****二级回复分页**********/
+.page {
+    margin-bottom: 10px;
+}
+.aw-comment-list .page .row {
+    border:0;
+}
+.pagination li a{
+    display: block;
+    width:33px;
+    height: 31px;
+}
+.pagination > .active > a, .pagination > .active > a:hover {
+    background-color: #499ef3 !important;
+    border-color: #499ef3 !important;
+}
+
+.CodeMirror-scroll {
+    height: 200px !important;
+}
+.CodeMirror .cm-spell-error {
+    background:rgba(255,0,0,.0) !important;
+}
+.aw-replay-box form>.mod-head {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    min-height: 32px;
+    margin-bottom: 10px;
+    padding-left: 40px;
+    line-height: 28px;
+}
+.aw-comment-box .aw-comment-box-btn {
+    margin-top: 10px;
+}
+.btn-mini {
+    background: #5bbf5a;
+}
+
+/***************加载全部按钮***********/
+.aw-more {
+    width: 835px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+.aw-more a {
+    display: block;
+    width: 100%;
+    height: 50px;
+}
+/****************回复编辑器******************/
+.aw-replay-box {
+    margin: 20px 0 0;
+    padding: 0 20px;
+}
+form {
+    margin: 0;
+}
+.aw-replay-box form>.mod-head {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    min-height: 32px;
+    margin-bottom: 10px;
+    padding-left: 40px;
+    line-height: 28px;
+}
+.aw-replay-box .mod-head>.aw-user-name {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.aw-user-name {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+}
+.aw-replay-box .mod-head>.aw-user-name img {
+    width: 32px;
+    height: 32px;
+}
+.aw-editor-box .mod-body {
+    margin-top: 15px;
+
+}
+/*****************侧边栏********************/
+.aw-side-bar {
+    padding: 0;
+}
+.aw-side-bar > div {
+    margin-left: 5px;
+}
+.aw-side-bar .aw-mod:first-child {
+    padding-top: 0;
+    border-top: none;
+}
+.aw-side-bar .aw-mod .mod-head {
+    padding-bottom: 5px;
+}
+.aw-side-bar .aw-mod {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.65);
+}
+.aw-side-bar .aw-mod h3 {
+    padding-left: 15px;
+    font-size: 16px;
+    margin-bottom: 0;
+    line-height:40px;
+    background-color: #f1f1f1;
+}
+.aw-side-bar .aw-mod dl {
+    height: auto;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.aw-side-bar .aw-mod dt, .aw-side-bar .aw-mod dt img {
+    width: 32px;
+    height: 32px;
+}
+dd {
+    margin-left: 10px;
+}
+.aw-side-bar .aw-mod dd {
+    width: 155px;
+    font-size: 12px;
+}
+.aw-side-bar .aw-mod .mod-body, .aw-side-bar .aw-mod .mod-footer {
+    padding: 0 20px 20px;
+}
+.aw-side-bar .aw-mod .mod-body dd .signature {
+    color: #999;
+}
+.font-size-12 {
+    font-size: 12px;
+}
+/******************/
+.aw-comment-box-main {
+    position: relative;
+}
+.aw-comment-box-main-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+

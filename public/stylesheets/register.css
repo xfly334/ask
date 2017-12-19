@@ -1,0 +1,88 @@
+.aw-register-box {
+    height: auto;
+    border: 1px solid #b3b3b3;
+    background: #fff;
+    /*margin: 100px auto 40px auto;*/
+    padding: 50px 0;
+    text-align: center;
+}
+.aw-register-box .mod-head {
+    padding-top: 150px;
+    background: url("../images/register-logo.png") no-repeat center top;
+    background-size: 120px 120px;
+
+
+}
+.aw-register-box .mod-head h1 {
+    margin: 45px 0 0;
+    font-size: 20px;
+    color: #666666;
+}
+.aw-register-box .mod-body {
+    width: 390px;
+    margin: 0 auto;
+    padding: 40px;
+}
+.aw-register-box .mod-body ul {
+    width: 310px;
+    padding: 0;
+    margin: 0;
+}
+.aw-register-box .mod-body ul li {
+    height: 40px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.aw-register-box .mod-body ul li span {
+    line-height: 28px;
+    background: #FFEAEA;
+    border: 1px solid #E5C3C4;
+    color: #CC0000;
+    position: absolute;
+    top: 0;
+    right: -100px;
+    width: 130px;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+}
+.aw-register-box ul li input[type="text"], .aw-register-box ul li input[type="password"], .aw-register-box .mod-body ul li input[type="email"], .aw-register-box .mod-body ul li input[type="submit"] {
+    height: 40px;
+    padding-left: 15px;
+    box-shadow: none;
+    border-color: #e6e6e6;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.aw-register-box .mod-body ul li.last {
+    text-align: left;
+}
+.aw-register-box .mod-body ul li input[type="submit"] {
+    background: #66b7ff;
+    color: #fff;
+    opacity: .65;
+    border: none;
+}
+.aw-register-box .mod-body ul li input[type="submit"]:hover {
+    opacity: .7;
+}
+.mod-footer {
+    height: 40px;
+}
+@media (max-width: 768px) {
+    .aw-register-box .mod-body ul li {
+        margin-bottom: 60px;
+    }
+    .aw-register-box .mod-body ul li:nth-last-of-type(2) {
+        margin-bottom: 20px;
+    }
+    .aw-register-box .mod-body ul li span {
+        top: 50px;
+        left: 0px;
+        width: 83%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+    <!--加载boostrap前端UI框架-->
+    <link rel="stylesheet" href="/plugins/bootstrap/dist/css/bootstrap.css">
+    <!--动态加载css样式-->
+    <link rel="stylesheet" href="<%= locals.resource %>">
+    <!-- 加载通用样式 -->
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <!--加载图标库-->
+    <link rel="stylesheet" href="/plugins/font-awesome/css/font-awesome.css">
+    <!-- 编辑器 -->
+    <link rel="stylesheet" href="/plugins/simplemde/dist/simplemde.min.css">
+    <script src="/plugins/simplemde/dist/simplemde.min.js"></script>
+    <!--加载jquery-->
+    <script src="/plugins/jquery/dist/jquery.js"></script>
+    <script src="/plugins/bootstrap/dist/js/bootstrap.js"></script>
+    <!--加载angularJS-->
+    <script src="/plugins/angular/angular.js"></script>
+    <!--首页的JS文件-->
+    <script type="text/javascript" src="/javascripts/index.js"></script>
+    <!--公共的JS文件-->
+    <script type="text/javascript" src="/javascripts/public.js"></script>
+    <!--控制器文件-->
+    <script type="text/javascript" src="/javascripts/controller.js"></script>
+</head>
+<body>
+<!-- 导航 -->
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example-navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand logo" href="/"></a>
+            <!--<form action="" class="navbar-search">
+                <input type="text" id="search" name="search" class="search-query">
+            </form>-->
+        </div>
+        <div class="collapse navbar-collapse" id="example-navbar-collapse">
+            <!-- 登录后显示 -->
+            <ul class="nav navbar-nav aw-nav navbar-right">
+                <!-- 判断一下是否登录 -->
+                <li>
+                    <a href="/">
+                        首页
+                    </a>
+                </li>
+                <% if(user) { %>
+                <li>
+                    <a href="/my/messages">
+                        消息
+                    </a>
+                    <% if(msg_count) { %>
+                    <span class="badge badge-important">
+                        <%= msg_count %>
+                    </span>
+                    <% } %>
+                </li>
+                <li>
+                    <a href="/question/create">
+                        发布
+                    </a>
+                </li>
+                <li>
+                    <a href="/setting">
+                        设置
+                    </a>
+                </li>
+                <li>
+                    <a href="/logout">
+                        退出
+                    </a>
+                </li>
+                <% } else { %>
+                <li>
+                    <a href="/login">登录</a>
+                </li>
+                <li>
+                    <a href="/register">注册</a>
+                </li>
+                <% } %>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<%- body %>
+<!-- 底部 -->
+<footer>
+    <div class="container">
+
+        <div class="col-sm-12 col-md-12 col-lg-12" style="text-align: center">
+            <div class="row about">
+                <div class="col-xs-4">
+                    <h4>关于</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">广告合作</a></li>
+                        <li><a href="#">友情链接</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-4">
+                    <h4>联系方式</h4>
+                    <ul class="list-unstyled">
+                        <li><a target="_blank"
+                               href="http://wpa.qq.com/msgrd?v=3&uin=398477420&site=qq&menu=yes">联系QQ</a></li>
+                        <li><a target="_blank"
+                               href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=SHtxcHx-f3x6eAg5OWYrJyU">电子邮件</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-4">
+                    <h4>旗下网站</h4>
+                    <ul class="list-unstyled">
+                        <li><a target="_blank" href="http://www.zhiyou100.com">智游集团</a></li>
+                        <li><a href="#">个人博客</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

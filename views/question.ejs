@@ -1,0 +1,152 @@
+<!-- 问题 -->
+<div class="aw-container-wrap" ng-app="questionApp" ng-controller="questionController" id="<%= question._id %>" target="/<%= question._id %>/reply/likes">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-11 col-md-9 aw-main-content">
+               <div>
+                   <!-- 话题 -->
+                   <div class="aw-mod aw-topic-bar">
+                       <div class="clearfix">
+                        <span class="topic-tag">
+                                <%= question.categoryName %>
+                        </span>
+                       </div>
+                   </div>
+                   <!-- 问题主体 -->
+                   <div class="aw-mod aw-question-detail">
+                       <div class="mod-head clearfix">
+                           <h1 class="pull-left"><%= question.title %></h1>
+                           <% if(question.author._id != currentUser){ %>
+                           <div class="operate pull-right">
+                               <a href="javascript:;" id="collect" ng-click="collect()" class="follow btn btn-normal btn-success">
+                                   <span>
+                                       <% if(question.collect.indexOf(currentUser) == -1) { %>
+                                       收藏
+                                       <% } else { %>
+                                       取消收藏
+                                       <% } %>
+                                   </span>
+                               </a>
+                           </div>
+                           <% } %>
+                       </div>
+                       <div class="mod-body">
+                           <div class="content markitup-box">
+                               <div class="markdown-text">
+                                   <p><%- markdown(question.content) %></p>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="mod-footer">
+                           <div class="meta">
+                               <span class="text-color-999"><%= question.create_time_ago() %></span>
+                               <span class="text-color-999">15次浏览</span>
+                               <% if(question.author._id == currentUser){ %>
+                               <a href="/question/<%= question._id %>/edit" class="text-color-999">
+                                   <i class="fa fa-edit"></i>编辑
+                               </a>
+                               <a href="/question/<%= question._id %>/delete" class="text-color-999">
+                                   <i class="fa fa-remove"></i>删除
+                               </a>
+                               <% } else { %>
+                               <a href="#reply_form" class="text-color-999">
+                                   <i class="fa fa-commenting-o"></i>回复
+                               </a>
+                               <% } %>
+
+                               <div class="pull-right more-operate">
+                                   <a href="#" class="text-color-999">
+                                       <i class="fa fa-share-square-o"></i>
+                                       分享
+                                   </a>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <!--回复主体 -->
+                   <% include public/reply-list %>
+                  <!-- <% if(question.comment_num > 10) { %>
+                   <div class="aw-more">
+                       <a href="javascript:;">加载剩余<%= question.comment_num - 10 %>个回复</a>
+                   </div>
+                   <% } %>-->
+                   <!-- 回复编辑器 -->
+                   <div class="aw-mod aw-replay-box">
+                       <form id="reply_form" target="/<%= question._id %>/reply" ng-submit="postForm()">
+                           <div class="mod-head">
+                               <a href="/user/<%= user.name %>" class="aw-user-name">
+                                   <img src="<%= user.avatar %>">
+                               </a>
+                               <p><%= user.name %></p>
+                           </div>
+                           <div class="mod-body">
+                               <div class="aw-mod aw-editor-box">
+                                   <div class="mod-head">
+                                       <div class="wmd-panel">
+                                           <textarea id="reply_markdown"></textarea>
+                                       </div>
+                                   </div>
+                                   <div class="mod-body clearfix">
+                                            <span class="pull-right">
+                                                <input type="submit" class="btn btn-normal btn-success" id="reply_input"
+                                                       value="提交回答">
+                                            </span>
+                                   </div>
+                               </div>
+                           </div>
+                       </form>
+                   </div>
+               </div>
+            </div>
+            <!-- 侧边栏 -->
+            <div class="col-sm-11 col-md-3 aw-side-bar hidden-xs hidden-sm">
+               <div>
+                   <!-- 作者信息 -->
+                   <div class="aw-mod">
+                       <div class="mod-head">
+                           <h3>作者</h3>
+                       </div>
+                       <div class="mod-body">
+                           <dl>
+                               <dt class="pull-left aw-border-radius-5">
+                                   <a href="/user/<%= question.author.name %>">
+                                       <img src="<%= question.author.avatar %>" alt="">
+                                   </a>
+                               </dt>
+                               <dd class="pull-left">
+                                   <a class="aw-user-name"
+                                      href="/user/<%= question.author.name %>"><%= question.author.name %></a>
+                                   <a href="#" class="pull-right">关注</a>
+                               </dd>
+                           </dl>
+                       </div>
+                       <div class="mod-footer">
+                           <%= question.author.motto %>
+                       </div>
+                   </div>
+                   <!-- 相关问题 -->
+                   <div class="aw-mod">
+                       <div class="mod-head">
+                           <h3>作者其他的话题</h3>
+                       </div>
+                       <div class="mod-body font-size-12">
+                           <ul>
+                               <% if(others.length > 0){%>
+                               <% others.forEach(function (other) { %>
+                               <li>
+                                   <a href="/question/<%= other._id %>"><%= other.title %></a>
+                               </li>
+                               <% }) %>
+                               <% } else { %>
+                               <li>
+                                  暂无
+                               </li>
+                               <% } %>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>

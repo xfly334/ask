@@ -1,0 +1,12 @@
+<div class="aw-item" message-id="<%= message._id %>">
+    <p>
+    <span class="pull-right text-color-999">
+        <button href="#" class="btn btn-mini btn-primary" ng-click="readOne(<%= index %>)">标为已读</button>
+    </span>
+        <em class="pull-left">
+            <a href="/user/<%= message.author_id.name %>" class="aw-user-name"><%= message.author_id.name %></a>
+            回复了
+        </em>
+        <a href="/question/<%= message.question_id._id %>#<%= message.reply_id._id %>" class="aw-hide-txt"><%= message.question_id.title %></a>
+    </p>
+</div>

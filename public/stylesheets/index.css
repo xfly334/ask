@@ -1,0 +1,193 @@
+
+/**********主体左侧内容***********************/
+.aw-container-wrap {
+    margin-top: 30px;
+}
+.aw-main-content {
+    padding: 0;
+    min-height: 210px;
+
+}
+.aw-main-content > div {
+    margin-right:5px;
+    background-color: #fff;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.65);
+    border-radius: 4px;
+}
+.aw-nav-tabs{
+    width: 100%;
+    padding:0 20px 0;
+    background-color: #f6f6f6;
+    border:0;
+}
+
+.aw-nav-tabs>li.active a {
+    background: none;
+    border-radius: 0;
+    border: 2px solid transparent;
+    border-bottom:2px solid #155faa;
+    color: #333;
+    font-weight: 700;
+}
+.aw-nav-tabs li a {
+    color: #666;
+    border: 2px solid transparent;
+    border-radius: 0;
+}
+.aw-nav-tabs>li.active a:hover,.aw-nav-tabs li a:hover {
+    background: none;
+    border-radius: 0;
+    border: 2px solid transparent;
+    border-bottom:2px solid #155faa;
+    color: #000;
+}
+.aw-explore-list {
+    padding: 10px 20px;
+}
+.aw-common-list .aw-item {
+    position: relative;
+    min-height: 45px;
+    padding: 14px 0 14px 50px;
+}
+.aw-item {
+    border-bottom:1px solid #f0f0f0;
+}
+.aw-item:last-of-type {
+    border-bottom:0;
+}
+.aw-common-list .aw-item > .aw-user-name {
+    position: absolute;
+    left: 0;
+    top: 18px;
+}
+.aw-common-list .aw-item img {
+    width: 40px;
+    height:auto;
+}
+
+.aw-question-content h4 {
+    margin: 0 0 3px;
+    padding-right: 20px;
+    font-size: 14px;
+}
+.aw-question-content h4 a {
+    color: #333;
+}
+.aw-question-content h4 a:hover {
+    color: #155faa;
+}
+
+.aw-question-content h4 span {
+    padding: 0 7px;
+    border-radius: 4px;
+}
+.aw-common-list .aw-question-content .contribute span {
+    text-align: right;
+}
+.aw-common-list .contribute a img {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+}
+.aw-common-list .contribute a {
+    margin-right: 10px;
+}
+.aw-common-list .aw-question-content .aw-user-name {
+    color: #666;
+}
+.aw-common-list .aw-question-content>span, .aw-common-list .aw-question-content p span {
+    font-size: 12px;
+    font-weight: 400;
+    color: #999;
+}
+.modal-footer {
+    border-top: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+.pagination {
+    margin:20px 0 0 0;
+}
+.pagination > .active > a {
+    background-color: #499ef3 !important;
+    color: #fff;
+    border-color: #499ef3 !important;
+}
+.pagination > .active > a:hover {
+    background-color: #499ef3;
+    color: #fff;
+    border-color: #499ef3
+}
+/*****************侧边栏********************/
+.aw-side-bar {
+    padding: 0;
+    border-left: 1px solid #e6e6e6;
+}
+.aw-side-bar > div {
+    margin-left: 5px;
+}
+
+.aw-side-bar .aw-mod {
+    padding: 0 0 20px 0;
+    margin: 0 0 20px 0;
+    background-color: #fff;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.65);
+    border-radius: 4px;
+}
+.aw-side-bar .aw-mod .mod-head {
+    height: 40px;
+    line-height: 40px;
+    background-color: #f6f6f6;
+    padding: 0 10px;
+}
+.aw-side-bar .aw-mod .mod-head h3 {
+    line-height: 40px;
+    font-size: 16px;
+}
+.aw-side-bar .aw-mod .mod-head a {
+    font-size: 16px;
+    color: #666;
+}
+.aw-side-bar .aw-mod .mod-head a:hover {
+    color: #000;
+}
+.aw-side-bar .aw-mod .mod-body,.aw-side-bar .aw-mod .mod-footer {
+    padding: 0 20px;
+}
+.aw-side-bar .aw-mod dl {
+    height: auto;
+    overflow: hidden;
+    margin: 10px 0;
+}
+.not-reply {
+    padding-top:20px;
+}
+.not-reply li {
+    margin: 5px 0;
+    padding-left: 5px;
+}
+.not-reply li a {
+    color: #778087;
+}
+.not-reply li a:hover {
+    color: #000;
+}
+.aw-side-bar .aw-mod dt, .aw-side-bar .aw-mod dt img {
+    width: 32px;
+    height: 32px;
+}
+dd {
+    margin-left: 10px;
+}
+dd a {
+    color: #888;
+}
+.aw-side-bar .aw-mod dd {
+    width: 155px;
+    font-size: 12px;
+}
+.aw-side-bar .aw-mod .mod-body dd .signature {
+    color: #999;
+}
+
+

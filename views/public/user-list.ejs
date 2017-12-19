@@ -1,0 +1,13 @@
+<% users.forEach(function(users){ %>
+<dl>
+    <dt class="pull-left aw-border-radius-5">
+        <a href="/user/<%= users.name %>"><img src="<%= users.avatar %>"></a>
+    </dt>
+    <dd class="pull-left">
+        <a class="aw-user-name" href="/user/<%= users.name %>"><%= users.name %></a>
+        <p class="signature">
+            积 分 : <%= users.score %>
+        </p>
+    </dd>
+</dl>
+<% }) %>

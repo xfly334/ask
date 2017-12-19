@@ -1,0 +1,75 @@
+<!-- 消息 -->
+<div class="aw-container-wrap" ng-app="messageApp" ng-controller="messageController">
+    <div class="container">
+        <div class="row">
+            <div class="aw-content-wrap clearfix col-sm-12 col-md-10 col-md-offset-1">
+                <div class=" aw-main-content">
+                    <ul class="nav nav-tabs aw-nav-tabs active">
+                        <li class="pull-right"><a href="#read" data-toggle="tab">已读消息</a></li>
+                        <li class="active pull-right"><a href="#noread" data-toggle="tab">未读消息</a></li>
+                        <h2 class="pull-left">
+                            <i class="fa fa-bell-o"></i>
+                            消息
+                        </h2>
+                    </ul>
+                    <div class="aw-user-center-tab">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="noread">
+                                <div class="aw-mod">
+                                    <div class="mod-body">
+                                        <% if(no_read && no_read.length > 0) { %>
+                                        <div class="mod-head">
+                                            <h3>
+                                                <button href="#" class="btn btn-success" ng-click="allRead()">全部已读
+                                                </button>
+                                            </h3>
+                                        </div>
+                                        <% no_read.forEach(function(message, index){ %>
+                                        <% if(message.type == 'at') { %>
+                                        <% include public/unat %>
+                                        <% } else if(message.type =='reply') {%>
+                                        <% include public/unreply %>
+                                        <% } else if(message.type == 'comment') {%>
+                                        <% include public/uncomment %>
+                                        <% } %>
+                                        <% }) %>
+                                        <% } else { %>
+                                        <p>没有未读消息</p>
+                                        <% } %>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="read">
+                                <div class="aw-mod clearfix">
+                                    <div class="mod-body">
+
+                                        <% if(read && read.length > 0) { %>
+                                        <% read.forEach(function(message){ %>
+                                        <% if(message.type == 'at'){ %>
+                                        <% include public/at %>
+                                        <% } else if(message.type == 'reply') {%>
+                                        <% include public/reply %>
+                                        <% } else if(message.type == 'comment') {%>
+                                        <% include public/comment %>
+                                        <% } %>
+                                        <% }) %>
+                                        <% } else { %>
+                                        <p>没有已读消息</p>
+                                        <% } %>
+                                    </div>
+                                    <% include public/message-page %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('.aw-navbar-nav li').eq(1).addClass('active').siblings().removeClass('active');
+    })
+</script>

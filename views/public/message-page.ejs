@@ -1,0 +1,9 @@
+<div class="mod-footer pull-right">
+    <ul class="pagination">
+        <% pageArr.forEach(function(page){ %>
+        <li class="<%= page == currentPage ? 'active' : '' %>">
+            <a class="messagePage" href="javascropt:;"><%= page %></a>
+        </li>
+        <% }) %>
+    </ul>
+</div>

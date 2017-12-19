@@ -1,0 +1,56 @@
+<div class="wrapper" ng-app="loginApp" ng-controller="loginController">
+    <div class="container">
+        <div class="aw-login-box col-lg-6 col-md-offset-3">
+            <div class="mod-body clearfix ">
+                <div class="content">
+                    <!--<div class="logo"></div>-->
+                    <form name="loginForm" ng-submit="postForm()">
+                        <ul>
+                            <li>
+                                <input name="name" ng-model="formData.name" ng-pattern="/(^[a-zA-Z][\w]{4,11}$)|(^(\w+)(\.\w+)*@(\w+)((\.\w+)+)$)/" type="text" placeholder="邮箱 / 用户名">
+                                <div style="height: 30px;">
+                                    <span ng-cloak ng-show="loginForm.name.$invalid && !loginForm.name.$pristine" required class=" text-danger"><i class="fa fa-close"></i></span>
+
+                                </div>
+                            </li>
+                            <li>
+                                <input name="password" ng-model="formData.password" ng-pattern="/(?!^\\d+$)(?!^[a-zA-Z]+$)(?!^[_#@]+$).{5,}/" ng-maxlength="12" required type="password" placeholder="密码">
+                                <div style="height: 30px;">
+                                    <span ng-cloak ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" class="text-danger">密码格式不正确</span>
+                                </div>
+                            </li>
+                            <li class="last">
+                                <input type="checkbox" checked="checked" value="agree">记住我
+                                <a href="#">忘记密码</a>
+                                <input type="submit" ng-disabled="loginForm.$invalid" value="登录" class="pull-right btn btn-large btn-primary">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+                <!-- 第三方登录 -->
+                <!--<div class="side-bar pull-right">-->
+                <!--<h3>第三方账号登录</h3>-->
+                <!--<a href="#" class="btn btn-block btn-weibo">-->
+                <!--</a>-->
+                <!--<a href="/auth/qq" class="btn btn-block btn-qq">-->
+                <!--</a>-->
+                <!--</div>-->
+                <div class="clearfix"></div>
+                <div style="line-height: 30px; height:30px;margin-top:20px;">
+                    <div ng-cloak id="errorbox" ng-show="error" class="alert text-center alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+
+                </div>
+            </div>
+            <div class="mod-footer">
+                <span>还没有账号?</span>&nbsp;
+                <a href="/register">立即注册</a>
+                &nbsp;•&nbsp;
+                <a href="#">游客访问</a>
+                &nbsp;•&nbsp;
+                <a href="#">问答阅读</a>
+            </div>
+        </div>
+    </div>
+</div>
